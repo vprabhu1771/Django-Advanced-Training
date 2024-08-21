@@ -1,0 +1,27 @@
+from django.db import models
+
+class Category(models.Model):
+
+    id = models.BigAutoField(primary_key=True)
+
+    name = models.CharField(max_length=255)
+
+    image = models.ImageField(upload_to='category', blank=True, null=True, default='')
+
+    def save(self, *args, **kwargs):
+        if not self.pk and not self.image:
+            # Set a default image if a new product is being created and no image is provided
+            self.image = 'no_image_available.png'
+        super().save(*args, **kwargs)
+
+    STATUS_CHOICES = (
+        ('Active', 'Active'),
+        ('Inactive', 'Inactive')
+    )
+    status = models.CharField(max_length=255, choices=STATUS_CHOICES)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        db_table='category'

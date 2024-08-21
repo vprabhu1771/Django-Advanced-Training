@@ -1,0 +1,31 @@
+QuerySet
+
+ Author.objects.filter(name__in=['HC Verma', 'Anuj kumar']).all()
+
+SQL
+
+ SELECT * FROM `author` WHERE `name` IN ('HC Verma', 'Anuj kumar');
+
+OUTPUT
+
++----+------------+
+| id | name       |
++----+------------+
+|  6 | Anuj kumar |
+|  7 | HC Verma   |
++----+------------+
+2 rows in set (0.000 sec)
+
+
++----+-------------------+
+| id | name              |
++----+-------------------+
+|  1 | Herbert Schildt   |
+|  2 | Kyle Hill         |
+|  3 | Kelly Barnhill    |
+|  4 | Robert T. Kiyosak |
+|  5 | Dr. Andy Williams |
+|  6 | Anuj kumar        |
+|  7 | HC Verma          |
++----+-------------------+
+7 rows in set (0.000 sec)

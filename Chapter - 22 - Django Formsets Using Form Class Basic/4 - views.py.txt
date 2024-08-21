@@ -1,0 +1,30 @@
+from django.shortcuts import render, redirect
+
+from .forms import CategoryForm
+
+# importing formset_factory
+from django.forms import formset_factory
+
+from .models import Category
+
+
+# Create your views here.
+def index(request):
+
+    CategoryFormSet = formset_factory(CategoryForm, extra = 3)
+
+    formset = CategoryFormSet(request.POST or None)
+
+    # creating a formset
+    if formset.is_valid():
+        for form in formset:
+            print(form.cleaned_data)
+            category = Category(name=form.cleaned_data['name'])
+            category.save()
+        return redirect('/')
+
+    # Add the formset to context dictionary
+    context = {
+        'formset': formset
+    }
+    return render(request, "backend/home.html", context)

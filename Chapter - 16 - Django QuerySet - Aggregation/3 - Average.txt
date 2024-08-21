@@ -1,0 +1,18 @@
+python manage.py shell
+
+from backend.models import Student
+
+from django.db.models import Avg
+
+
+Student.objects.filter(course__iexact='python').aggregate(average_fees=Avg('total_fees'))
+
+or
+
+Student.objects.filter(course__iexact='python').aggregate(average_fees=Avg('total_fees')).get('average_fees')
+
+Output
+
+{'average_fees': Decimal('10000.000000')}
+
+Decimal('10000.000000')

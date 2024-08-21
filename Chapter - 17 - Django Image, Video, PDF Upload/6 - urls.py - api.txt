@@ -1,0 +1,19 @@
+from django.urls import path
+
+from api.views import GalleryViewSet, VideoViewSet, PDFViewSet
+
+urlpatterns = [
+
+    # Image
+    path('image/gallery/', GalleryViewSet.as_view(), name='image_gallery'),
+    path('image/upload/', GalleryViewSet.as_view(), name='image_upload'),
+
+    # Video
+    path('video/gallery/', VideoViewSet.as_view(), name='video_gallery'),
+    path('video/upload/', VideoViewSet.as_view(), name='video_upload'),
+
+    # PDF
+    path('pdf/gallery/', PDFViewSet.as_view(), name='pdf_gallery'),
+    path('pdf/upload/', PDFViewSet.as_view(), name='pdf_upload'),
+
+]

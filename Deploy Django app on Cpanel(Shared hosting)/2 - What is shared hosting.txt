@@ -1,0 +1,24 @@
+Shared hosting means running more than one website on a single machine, with each website has its own Domain Name.
+Most of the users share the same resources on a single server, which keeps the costs low. 
+
+Each user gets a portion of a server in which they can host their website files. 
+The hosting company will put your website on a server along with hundreds, if not thousands, of other websites. 
+
+Each customer using the shared hosting platform’s server has access to features like databases, 
+monthly traffic, disk space, email accounts, FTP accounts and other add-ons offered by the host.
+
+This means each customer has to share space and resources on the server with every other customer, including CPU time, 
+memory, disk space, and other elements such as the single MySQL server, Apache server, and mail server.
+
+Shared hosting is the most affordable option. Having multiple users on a single physical server dilutes 
+the price for individual users. Hence, shared hosting is best suited for businesses that do not have the 
+resources and expertise to manage their own dedicated servers. 
+
+It’s easy to get started with shared hosting compared to other hosting options.[2]
+
+Before continuing this tutorial you should have basic familiarity with Django, a domain name, 
+and cPanel credentials to login into your cPanel account. For this, you need to buy a hosting plan 
+from hosting providers like NameCheap, GoDaddy. 
+
+Make sure your hosting provider supports python apps. 
+To check login into your cPanel account and look for the option “Setup Python App” under the software tab.

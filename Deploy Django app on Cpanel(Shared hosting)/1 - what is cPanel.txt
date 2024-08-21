@@ -1,0 +1,7 @@
+The cPanel Control Panel is more than a regular website management tool. 
+
+CPanel is a fully-featured browser-based control panel that allows you to manage your domain hosting 
+through a web interface. 
+
+It provides a graphical interface (GUI) and automation tools designed to ease 
+the process of hosting a website to the website owner or the “end-user”.

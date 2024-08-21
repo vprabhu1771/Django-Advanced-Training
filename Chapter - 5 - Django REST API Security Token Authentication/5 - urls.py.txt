@@ -1,0 +1,23 @@
+from django.urls import path
+from .views import UserCreateAPIView, ListTask, list_todo, LogoutAPIView, CustomAuthToken
+
+# Token Authentication
+from rest_framework.authtoken.views import obtain_auth_token
+
+urlpatterns = [
+    # class based get view
+    path('list_task', ListTask.as_view()),
+
+    # function based get view
+    path('list_todo', list_todo),
+
+    path('users/create', UserCreateAPIView.as_view(), name='create'),
+
+    # Token Authentication
+    path('token', obtain_auth_token, name='api_token_auth'),
+
+    path('token/logout', LogoutAPIView.as_view(), name='api_token_auth_logout'),
+
+    # custom token
+    path('token/custom', CustomAuthToken.as_view(), name='custom_api_token_auth'),
+]

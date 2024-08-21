@@ -1,0 +1,27 @@
+from rest_framework import generics
+from backend.models import Country, State, City
+from .serializers import CountrySerializer, StateSerializer, CitySerializer
+
+class CountryListCreateView(generics.ListCreateAPIView):
+    queryset = Country.objects.all()
+    serializer_class = CountrySerializer
+
+class CountryDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Country.objects.all()
+    serializer_class = CountrySerializer
+
+class StateListCreateView(generics.ListCreateAPIView):
+    queryset = State.objects.all()
+    serializer_class = StateSerializer
+
+class StateDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = State.objects.all()
+    serializer_class = StateSerializer
+
+class CityListCreateView(generics.ListCreateAPIView):
+    queryset = City.objects.all()
+    serializer_class = CitySerializer
+
+class CityDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = City.objects.all()
+    serializer_class = CitySerializer

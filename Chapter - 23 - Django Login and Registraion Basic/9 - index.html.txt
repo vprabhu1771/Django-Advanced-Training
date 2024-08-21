@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block title %}
+
+Customer Login
+
+{% endblock %}
+
+{% block content %}
+
+<ol>
+
+    {% if user.is_authenticated %}
+    <li>
+
+        <a href="{% url 'customer_logout' %}">logout</a>
+
+    </li>
+    {% else %}
+
+    <li>
+
+        <a href="{% url 'customer_login' %}">login</a>
+
+    </li>
+
+    <li>
+
+        <a href="{% url 'customer_registration' %}">Registration</a>
+
+    </li>
+
+    {% endif %}
+</ol>
+
+
+{% if user.is_authenticated %}
+
+<h1>Profile</h1>
+
+<table>
+
+    <tr>
+
+        <th>Username</th>
+
+        <td>{{ user.username }}</td>
+
+    </tr>
+
+    <tr>
+
+        <th>Email</th>
+
+        <td>{{ user.email }}</td>
+
+    </tr>
+
+    <tr>
+
+        <th>Phone</th>
+
+        <td>{{ user.customer.phone }}</td>
+
+    </tr>
+
+</table>
+
+{% endif %}
+
+{% endblock %}

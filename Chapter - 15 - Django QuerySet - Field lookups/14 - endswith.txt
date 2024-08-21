@@ -1,0 +1,17 @@
+QuerySet
+
+Book.objects.filter(name__endswith='Reference').all()
+
+SQL
+
+SELECT `name` FROM `book` WHERE `name` LIKE '%Reference';
+
+OUTPUT
+
++------------------------------+
+| name                         |
++------------------------------+
+| PHP : The Complete Reference |
+| C++: The Complete Reference  |
++------------------------------+
+2 rows in set (0.000 sec)

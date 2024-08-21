@@ -1,0 +1,23 @@
+[
+  {
+    "model": "backend.country",
+    "pk": 1,
+    "fields": {
+      "name": "India"
+    }
+  },
+  {
+    "model": "backend.country",
+    "pk": 2,
+    "fields": {
+      "name": "USA"
+    }
+  },
+  {
+    "model": "backend.country",
+    "pk": 3,
+    "fields": {
+      "name": "Russia"
+    }
+  }
+]

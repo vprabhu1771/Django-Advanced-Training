@@ -1,0 +1,16 @@
+QuerySet
+
+Category.objects.all().count()
+
+SQL
+
+SELECT COUNT(*) FROM `category`;
+
+OUTPUT
+
++----------+
+| COUNT(*) |
++----------+
+|        5 |
++----------+
+1 row in set (0.000 sec)

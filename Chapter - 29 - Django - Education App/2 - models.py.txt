@@ -1,0 +1,61 @@
+from django.db import models
+
+# Create your models here.
+class Language(models.Model):
+
+    id = models.BigAutoField(primary_key=True)
+
+    name = models.CharField(max_length=255, unique=True)
+
+    image = models.ImageField(upload_to='course/', null=True, blank=True)
+
+    def remove_on_image_update(self):
+        try:
+            # is the object in the database yet?
+            obj = Language.objects.get(id=self.id)
+        except Language.DoesNotExist:
+            # object is not in db, nothing to worry about
+            return
+        # is the save due to an update of the actual image file?
+        if obj.image and self.image and obj.image != self.image:
+            # delete the old image file from the storage in favor of the new file
+            obj.image.delete()
+
+    def save(self, *args, **kwargs):
+        # object is possibly being updated, if so, clean up.
+        self.remove_on_image_update()
+        return super(Language, self).save(*args, **kwargs)
+
+    def delete(self, *args, **kwargs):
+        # object is being removed from db, remove the file from storage first
+        self.image.delete()
+        return super(Language, self).delete(*args, **kwargs)
+
+    def image_tag(self):
+        from django.utils.html import mark_safe
+        return mark_safe('<img src="/media/language/%s" width="150" height="150" />' % (self.image))
+
+    image_tag.short_description = 'Image'
+    image_tag.allow_tags = True
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        db_table = 'language'
+
+class Category(models.Model):
+
+    id = models.BigAutoField(primary_key=True)
+
+    name = models.CharField(max_length=255, unique=True)
+
+    image = models.ImageField(upload_to='category/', null=True, blank=True)
+
+    languages = models.ManyToManyField(Language)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        db_table = 'category'

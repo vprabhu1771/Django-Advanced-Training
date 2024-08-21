@@ -1,0 +1,67 @@
+from django.contrib.auth.models import User, Group
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.generics import CreateAPIView
+from rest_framework.parsers import JSONParser
+from rest_framework.permissions import AllowAny
+from rest_framework.response import Response
+from rest_framework.views import APIView
+
+from rest_framework import permissions, status
+from rest_framework.permissions import IsAuthenticated
+
+from rest_framework.authtoken.views import ObtainAuthToken
+from rest_framework.authtoken.models import Token
+
+from backend.models import Task
+from .permissions import IsEmployee, IsManager
+from .serialiers import UserSerializer, TaskSerializer
+
+
+class UserCreateAPIView(CreateAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    permission_classes = (AllowAny,)
+
+class LogoutAPIView(APIView):
+    def get(self, request, format=None):
+        # delete token
+        request.user.auth_token.delete()
+
+        data = {
+            'message': 'logout was successfully'
+        }
+        return Response(data=data,status=status.HTTP_200_OK)
+
+# customize token
+class CustomAuthToken(ObtainAuthToken):
+
+    def post(self, request, *args, **kwargs):
+        serializer = self.serializer_class(data=request.data,
+                                           context={'request': request})
+        serializer.is_valid(raise_exception=True)
+        user = serializer.validated_data['user']
+        token, created = Token.objects.get_or_create(user=user)
+        return Response({
+            'token_type': 'token',
+            'token': token.key,
+            'user_id': user.pk,
+            'email': user.email
+        })
+
+class ListTask(APIView):
+    # permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [IsManager]
+    def get(self, request):
+        task = Task.objects.all()
+        serializer = TaskSerializer(task, many=True)
+        return Response(serializer.data)
+
+@api_view(['GET'])
+# @permission_classes([IsAuthenticated])
+@permission_classes([IsEmployee])
+def list_todo(request):
+    task = Task.objects.all()
+    serializer = TaskSerializer(task, many=True)
+    return Response(serializer.data)

@@ -1,0 +1,8 @@
+1) Setup Python App
+
+CPanel -> Software -> Setup Python App
+
+
+2) Create Application
+
+Create Application

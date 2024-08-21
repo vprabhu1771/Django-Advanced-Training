@@ -1,0 +1,10 @@
+TEMPLATES = [
+    {
+        'DIRS': [BASE_DIR / 'templates'],
+    },
+]
+INSTALLED_APPS = [
+    ...
+    ...
+    'backend'
+]

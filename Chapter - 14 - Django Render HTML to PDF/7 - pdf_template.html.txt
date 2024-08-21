@@ -1,0 +1,77 @@
+<head>
+<style>
+    @page {
+        size: a4 portrait;
+        @frame header_frame {           /* Static Frame */
+            -pdf-frame-content: header_content;
+            left: 50pt; width: 512pt; top: 50pt; height: 40pt;
+        }
+        @frame content_frame {          /* Content Frame */
+            left: 50pt; width: 512pt; top: 90pt; height: 632pt;
+        }
+        @frame footer_frame {           /* Another static Frame */
+            -pdf-frame-content: footer_content;
+            left: 50pt; width: 512pt; top: 772pt; height: 20pt;
+        }
+    }
+
+    .table_content {
+  		border: 1px solid black;
+  		border-collapse: collapse;
+  		padding: 3px;
+	}
+</style>
+</head>
+
+<body>
+    <!-- Content for Static Frame 'header_frame' -->
+    <div id="header_content">
+    	<h3>{{ system_settings.company_name }}</h3>
+    </div>
+
+    <!-- Content for Static Frame 'footer_frame' -->
+    <div id="footer_content">(c) - page <pdf:pagenumber>
+        of <pdf:pagecount>
+    </div>
+
+    <!-- HTML Content -->
+    <table>
+    		<tr>
+    			<td>{{ system_settings.address }}</td>
+    			<td>{{ system_settings.phone }}</td>
+    		</tr>
+    		<tr>
+    			<td>{{ system_settings.city }}, {{ system_settings.state }},</td>
+    			<td>{{ system_settings.email }}</td>
+    		</tr>
+    		<tr>
+    			<td>{{ system_settings.zipcode }}</td>
+    			<td>{{ system_settings.website }}</td>
+    		</tr>
+    </table>
+
+    <hr>
+
+    <table class="table_content">
+    	<tr>
+			<th style="width:7%">No</th>
+    		<th>Name</th>
+    		<th>Course</th>
+    		<th>Fees</th>
+    	</tr>
+		{% for element in object_list %}
+    	<tr>
+
+    		<td>{{ forloop.counter }}</td>
+    		<td>{{ element.name }}</td>
+    		<td>{{ element.course }}</td>
+    		<td>{{ element.total_fees }}</td>
+    	</tr>
+    	{% endfor %}
+    </table>
+
+    <hr>
+
+    <p><strong>Total: {{ total }}</strong></p>
+</body>
+</html>

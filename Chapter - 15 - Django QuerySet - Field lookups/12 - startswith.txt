@@ -1,0 +1,17 @@
+QuerySet
+
+Book.objects.filter(name__startswith='P').all()
+
+SQL
+
+SELECT `name` FROM `book` WHERE `name` LIKE 'P%';
+
+OUTPUT
+
++------------------------------+
+| name                         |
++------------------------------+
+| PHP : The Complete Reference |
+| Physics                      |
++------------------------------+
+2 rows in set (0.000 sec)

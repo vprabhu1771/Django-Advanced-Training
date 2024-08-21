@@ -1,0 +1,16 @@
+POST http://127.0.0.1:8000/api/users/create
+
+Headers 
+
+Content-Type: application/json
+
+
+Body -> raw -> JSON
+
+{
+    "username": "prabhu",
+    "password": "prabhu123!@#",
+    "email": "prabhu@gmail.com",
+    "first_name": "prabhu",
+    "last_name": "v"
+}

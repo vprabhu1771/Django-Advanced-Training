@@ -1,0 +1,1 @@
+https://stackoverflow.com/questions/69057482/django-models-textchoices-vs-models-integerchoices

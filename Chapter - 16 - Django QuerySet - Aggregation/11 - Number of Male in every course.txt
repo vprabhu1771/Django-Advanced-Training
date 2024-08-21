@@ -1,0 +1,21 @@
+python manage.py shell
+
+from backend.models import Student
+
+from django.db.models import Count
+
+
+
+Student.objects.values('course').annotate(
+    no_of_student=Count('id', filter=Q(gender='M'))
+).order_by()
+
+
+Output
+
+<QuerySet [
+    {'course': 'Python', 'no_of_student': 2},
+    {'course': 'Java', 'no_of_student': 1},
+    {'course': 'C', 'no_of_student': 0},
+    {'course': 'C++', 'no_of_student': 0}
+    ]>

@@ -1,0 +1,20 @@
+from django.shortcuts import render
+from .models import Profile
+
+# Create your views here.
+def index(request):
+    labels = []
+    data = []
+
+    queryset = Profile.objects.order_by('-age')[:5]
+
+    for element in queryset:
+        labels.append(element.name)
+        data.append(element.age)
+
+    context = {
+        'labels': labels,
+        'data': data
+    }
+
+    return render(request, 'home/index.html', context)

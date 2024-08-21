@@ -1,0 +1,16 @@
+python manage.py shell
+
+from backend.models import Student
+
+from django.db.models import Count
+
+
+Student.objects.values('gender').annotate(gender_count=Count('gender')).order_by()
+
+
+Output
+
+<QuerySet [
+    {'gender': 'M', 'gender_count': 3}, 
+    {'gender': 'F', 'gender_count': 3}
+    ]>

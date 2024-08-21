@@ -1,0 +1,19 @@
+from rest_framework import serializers
+
+from backend.models import Gallery, Video, PDF
+
+
+class GallerySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Gallery
+        fields = ('image', )
+
+class VideoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Video
+        fields = ('video', )
+
+class PDFSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = PDF
+        fields = ('pdf', )

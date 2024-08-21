@@ -1,0 +1,19 @@
+QuerySet
+
+Category.objects.filter(status__iexact='active').all()
+
+SQL
+
+ SELECT * FROM `category` WHERE `status` = 'active';
+
+OUTPUT
+
++----+-------------+--------+
+| id | name        | status |
++----+-------------+--------+
+|  1 | Technology  | Active |
+|  2 | Science     | Active |
+|  3 | Management  | Active |
+|  5 | Programming | Active |
++----+-------------+--------+
+4 rows in set (0.000 sec)

@@ -1,0 +1,33 @@
+QuerySet
+
+ Book.objects.filter(price__gte=400).all()
+
+SQL
+
+SELECT `name`, `price` FROM `book` WHERE `price` >= 400;
+
+OUTPUT
+
++------------------------------+-------+
+| name                         | price |
++------------------------------+-------+
+| Murach's MySQL               |   455 |
+| ASP.NET Core 5 for Beginners |   422 |
++------------------------------+-------+
+2 rows in set (0.000 sec)
+
+
++------------------------------+-------+
+| name                         | price |
++------------------------------+-------+
+| PHP : The Complete Reference |    20 |
+| Physics                      |    15 |
+| Murach's MySQL               |   455 |
+| WordPress for Beginners 2022 |   100 |
+| WordPress Mastery Guide      |    53 |
+| Rich Dad Poor Dad            |   120 |
+| The Girl Who Drank the Moon  |   200 |
+| C++: The Complete Reference  |   142 |
+| ASP.NET Core 5 for Beginners |   422 |
++------------------------------+-------+
+9 rows in set (0.000 sec)

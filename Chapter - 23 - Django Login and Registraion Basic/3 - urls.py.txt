@@ -1,0 +1,14 @@
+from django.urls import path
+
+from .views import customer_registration, customer_login, customer_logout, home
+
+urlpatterns = [
+
+    path('customer_login', customer_login, name='customer_login'),
+
+    path('customer_registration', customer_registration, name='customer_registration'),
+
+    path('customer_logout', customer_logout, name='customer_logout'),
+
+    path('', home, name='home')
+]

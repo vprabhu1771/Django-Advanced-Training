@@ -1,0 +1,13 @@
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('countries/', views.CountryListCreateView.as_view(), name='country-list'),
+    path('countries/<int:pk>/', views.CountryDetailView.as_view(), name='country-detail'),
+
+    path('states/', views.StateListCreateView.as_view(), name='state-list'),
+    path('states/<int:pk>/', views.StateDetailView.as_view(), name='state-detail'),
+
+    path('cities/', views.CityListCreateView.as_view(), name='city-list'),
+    path('cities/<int:pk>/', views.CityDetailView.as_view(), name='city-detail'),
+]

@@ -1,0 +1,18 @@
+python manage.py shell
+
+from backend.models import Student
+
+from django.db.models import Min
+
+
+Student.objects.aggregate(min_fees=Min('total_fees'))
+
+or
+
+Student.objects.aggregate(min_fees=Min('total_fees')).get('min_fees')
+
+Output
+
+{'min_fees': Decimal('2000.00')}
+
+Decimal('2000.00')

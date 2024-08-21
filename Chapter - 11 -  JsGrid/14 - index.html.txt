@@ -1,0 +1,81 @@
+{% extends "backend/base.html" %}
+
+{% block script %}
+<script>
+    $(document).ready(function(){
+
+        console.log("document loaded");
+
+        $("#country_grid_table").jsGrid({
+            height: "400px",
+            width: "50%",
+
+            inserting: true,
+            filtering: true,
+            editing: true,
+            sorting: true,
+            paging: true,
+            autoload: true,
+
+            pageSize: 10,
+            pageButtonCount: 5,
+
+            deleteConfirm: "Do you really want to delete the country?",
+
+            controller: {
+                loadData: function(filter){
+                    return $.ajax({
+                        type: 'GET',
+                        url: 'api/country/',
+                        data: filter,
+                    });
+                },
+                insertItem: function(item)
+                {
+                    return $.ajax({
+                        type: 'POST',
+                        headers: { "X-CSRFToken": '{{ csrf_token }}' },
+                        url: 'api/country/',
+                        data: item,
+                    });
+                },
+                updateItem: function(item)
+                {
+                    return $.ajax({
+                        type: 'PUT',
+                        headers: { "X-CSRFToken": '{{ csrf_token }}' },
+                        url: 'api/country/' + item.id + '/',
+                        data: item,
+                    });
+                },
+                deleteItem: function(item)
+                {
+                    return $.ajax({
+                        type: 'DELETE',
+                        headers: { "X-CSRFToken": '{{ csrf_token }}' },
+                        url: 'api/country/' + item.id + '/',
+                        data: item,
+                    });
+                }
+
+            },
+
+
+            fields: [
+                { name: "id", type: "number", width: 40},
+                { name: "name", type: "text", width: 150 },
+                { type: "control" }
+            ]
+        });
+
+    });
+</script>
+
+
+{% endblock %}
+
+{% block content %}
+
+<div id="country_grid_table"></div>
+
+{% endblock %}

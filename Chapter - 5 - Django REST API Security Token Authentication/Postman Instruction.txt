@@ -1,0 +1,89 @@
+POST http://127.0.0.1:8000/api/token
+
+Authorization
+
+Type: No Auth
+
+
+Headers 
+
+Content-Type: application/x-www-form-urlencoded
+
+
+Body -> x-www-form-urlencoded
+
+
+username: "prabhu"
+password: "prabhu123!@#"
+
+
+
+Response -> JSON
+
+{
+    "token": "73fa0676b97292009843a497b9f96a4bf2b1dc78"
+}
+
+
+
+GET http://127.0.0.1:8000/api/list_todo
+
+Authorization
+
+Type: No Auth
+
+
+Headers 
+
+Authorization: Token 73fa0676b97292009843a497b9f96a4bf2b1dc78
+
+
+
+GET http://127.0.0.1:8000/api/token/logout
+
+Authorization
+
+Type: No Auth
+
+
+Headers 
+
+Authorization: Token 73fa0676b97292009843a497b9f96a4bf2b1dc78
+
+
+Response -> JSON
+
+{
+    "message": "logout was successfully"
+}
+
+
+
+POST http://127.0.0.1:8000/api/token/custom
+
+Authorization
+
+Type: No Auth
+
+
+Headers 
+
+Content-Type: application/x-www-form-urlencoded
+
+
+Body -> x-www-form-urlencoded
+
+
+username: "prabhu"
+password: "prabhu123!@#"
+
+
+
+Response -> JSON
+
+{
+    "token_type": "token",
+    "token": "c6257a1f528818d7752a3701d55755b2c608f17a",
+    "user_id": 7,
+    "email": "prabhu@gmail.com"
+}

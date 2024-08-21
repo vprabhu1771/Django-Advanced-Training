@@ -1,0 +1,18 @@
+python manage.py shell
+
+from backend.models import Student
+
+from django.db.models import Sum
+
+
+Student.objects.aggregate(total_fees=Sum('total_fees'))
+
+or
+
+Student.objects.aggregate(total_fees=Sum('total_fees')).get('total_fees')
+
+Output
+
+{'total_fees': Decimal('34000.00')}
+
+Decimal('34000.00')

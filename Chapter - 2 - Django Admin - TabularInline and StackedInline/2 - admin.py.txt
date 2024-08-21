@@ -1,0 +1,32 @@
+from django.contrib import admin
+
+from backend.models import Author, Book, Student, MarkList
+
+# Register your models here.
+class BookInline(admin.TabularInline):
+    model = Book
+
+class AuthorAdmin(admin.ModelAdmin):
+    inlines = [
+        BookInline,
+    ]
+
+admin.site.register(Book)
+
+admin.site.register(Author, AuthorAdmin)
+
+
+
+class MarkListInline(admin.StackedInline):
+    model = MarkList
+
+class StudentAdmin(admin.ModelAdmin):
+    list_display = ['id', 'name']
+
+    inlines = [
+        MarkListInline,
+    ]
+
+admin.site.register(Student, StudentAdmin)
+
+admin.site.register(MarkList)

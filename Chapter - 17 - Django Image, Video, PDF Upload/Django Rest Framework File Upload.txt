@@ -1,0 +1,3 @@
+https://stackoverflow.com/questions/20473572/django-rest-framework-file-upload
+
+https://stackoverflow.com/questions/45564130/django-rest-framework-image-upload

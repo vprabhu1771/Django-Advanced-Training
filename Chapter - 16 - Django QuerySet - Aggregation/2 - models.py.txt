@@ -1,0 +1,33 @@
+from django.db import models
+
+# Create your models here.
+
+GENDER_CHOICE =(
+    ("M", "M"),
+    ("F", "F"),
+)
+
+COURSE_CHOICE = (
+    ('C', 'C'),
+    ('C++', 'C++'),
+    ('Python', 'Python'),
+    ('Java', 'Java'),
+)
+
+class Student(models.Model):
+
+    id = models.BigAutoField(primary_key=True)
+
+    name = models.CharField(max_length=255)
+
+    gender = models.CharField(max_length=1, choices=GENDER_CHOICE)
+
+    course = models.CharField(max_length=255, choices=COURSE_CHOICE)
+
+    total_fees = models.DecimalField(max_digits=10, decimal_places=2)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        db_table = 'student'

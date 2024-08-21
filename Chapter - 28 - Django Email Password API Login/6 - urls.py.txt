@@ -1,0 +1,15 @@
+from django.urls import path
+from .views import UserCreateAPIView, LogoutAPIView, CustomAuthToken
+
+urlpatterns = [
+
+     # Registration
+     path('users/create', UserCreateAPIView.as_view(), name='create'),
+
+     # Login
+     path('token/custom', CustomAuthToken.as_view(), name='custom_api_token_auth'),
+
+     # Logout
+     path('token/logout', LogoutAPIView.as_view(), name='api_token_auth_logout')
+
+]

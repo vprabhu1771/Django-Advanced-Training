@@ -1,0 +1,48 @@
+{% extends "backend/base.html" %}
+
+{% block title %}
+
+{{ title }}
+
+{% endblock %}
+
+
+{% block content %}
+
+<form method="GET" action="{% url 'search' %}">
+
+    <input type="text" name='q' placeholder="Search"/>
+
+    <input type="submit" value="search">
+
+</form>
+
+{% if results %}
+    <table>
+
+        <thead>
+
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            {% for element in results %}
+            <tr>
+
+                <td>{{ element.id }}</td>
+
+                <td>{{ element.name }}</td>
+
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,10 @@
+from django.urls import path
+from .views import index, country_check
+
+urlpatterns = [
+ 
+    path('', index),
+ 
+    path('ajax/country_check', country_check, name='country_check')
+
+]

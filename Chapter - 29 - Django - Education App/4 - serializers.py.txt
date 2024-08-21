@@ -1,0 +1,19 @@
+from rest_framework import serializers
+
+from backend.models import Language, Category, Student, Marks, Child, Parent
+
+
+#https://stackoverflow.com/questions/69801376/group-by-and-nesting-result-in-django-rest-framework
+
+
+class LanguageSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Language
+        fields = ('id', 'name', 'image')
+
+class CategorySerializer(serializers.ModelSerializer):
+    languages = LanguageSerializer(many=True)
+
+    class Meta:
+        model = Category
+        fields = ('id','name', 'image', 'languages')

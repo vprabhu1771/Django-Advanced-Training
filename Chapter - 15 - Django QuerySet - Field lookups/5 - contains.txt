@@ -1,0 +1,17 @@
+QuerySet
+
+Book.objects.filter(name__contains='Reference').all() 
+
+SQL
+
+ SELECT * FROM `book` WHERE `name` LIKE '%Reference%';
+
+OUTPUT
+
++-----------------------------------------+
+| name                                    |
++-----------------------------------------+
+| C++ The Complete Reference, 4th Edition |
+| PHP : The Complete Reference            |
++-----------------------------------------+
+2 rows in set (0.000 sec)

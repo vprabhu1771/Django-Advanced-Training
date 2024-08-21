@@ -1,0 +1,20 @@
+from django.http import HttpResponse
+from django.shortcuts import render
+from backend.models import Country
+
+def index(request):
+    return render(request, "backend/index.html")
+
+def country_check(request):
+
+    if request.method == 'POST':
+        country_response = Country.objects.filter(name__icontains=request.POST.get('search_country'))
+        if country_response:
+            success_template = "<table><tr><th>id</th><th>name</th></tr>"
+
+        for element in country_response:
+            success_template += "<tr><th>{}</th><th>{}</th></tr>".format(element.id, element.name)
+            return HttpResponse(success_template)
+    else:
+        error_template = "<span style='color: red;'>{} available</span>".format(request.POST.get('search_cuontry'))
+        return HttpResponse(error_template)

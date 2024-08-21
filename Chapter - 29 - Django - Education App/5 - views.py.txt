@@ -1,0 +1,60 @@
+from django.db.models import Count
+from django.shortcuts import render
+from rest_framework.generics import ListAPIView
+from rest_framework.response import Response
+from rest_framework import viewsets, generics
+
+from api.serializers import LanguageSerializer, CategorySerializer
+from backend.models import Language, Category, Student, Marks, Parent
+
+
+# Create your views here.
+# https://stackoverflow.com/questions/6855624/plus-sign-in-query-string
+# http://127.0.0.1:8000/api/course?name=c&sort=desc
+# http://127.0.0.1:8000/api/course?name=c
+# http://127.0.0.1:8000/api/course?name=c%2B%2B
+
+
+# https://stackoverflow.com/questions/26379849/return-image-url-in-django-rest-framework
+# https://stackoverflow.com/questions/16307307/django-admin-show-image-from-imagefield
+# https://stackoverflow.com/questions/5372934/how-do-i-get-django-admin-to-delete-files-when-i-remove-an-object-from-the-datab
+
+
+class LanguageList(ListAPIView):
+    serializer_class = LanguageSerializer
+
+    def get_queryset(self):
+
+        queryset = Language.objects.all()
+
+        language_name = self.request.query_params.get('name')
+
+        sort = self.request.query_params.get('sort')
+
+        if language_name is not None:
+            queryset = queryset.filter(name__icontains=language_name)
+
+        if sort == "desc":
+            queryset = queryset.order_by('-name')
+        else:
+            queryset = queryset.order_by('name')
+
+        return queryset
+
+    def list(self, request):
+        queryset = self.get_queryset()
+        serializer = LanguageSerializer(queryset, many=True)
+        return Response(serializer.data)
+
+
+class CategoryList(ListAPIView):
+    def get_queryset(self):
+        queryset = Category.objects.all()
+
+        return queryset
+
+    def list(self, request):
+        queryset = self.get_queryset()
+        serializer = CategorySerializer(queryset, many=True)
+        return Response(serializer.data)
+

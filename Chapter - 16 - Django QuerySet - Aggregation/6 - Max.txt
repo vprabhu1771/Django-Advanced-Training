@@ -1,0 +1,18 @@
+python manage.py shell
+
+from backend.models import Student
+
+from django.db.models import Max
+
+
+Student.objects.aggregate(max_fees=Max('total_fees'))
+
+or
+
+Student.objects.aggregate(max_fees=Max('total_fees')).get('max_fees')
+
+Output
+
+{'max_fees': Decimal('10000.00')}
+
+Decimal('10000.00')

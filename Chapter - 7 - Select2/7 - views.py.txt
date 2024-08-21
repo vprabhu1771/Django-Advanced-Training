@@ -1,0 +1,11 @@
+from django.shortcuts import render
+
+from backend.models import Country
+
+
+# Create your views here.
+def index(request):
+    context = {
+        'country' : Country.objects.all()
+    }
+    return render(request, "backend/index.html", context)

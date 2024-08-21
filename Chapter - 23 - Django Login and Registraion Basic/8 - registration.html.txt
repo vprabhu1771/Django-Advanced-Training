@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}
+
+Customer Registration
+
+{% endblock %}
+
+{% block content %}
+
+<form action="" method="post">
+    {% csrf_token %}
+
+    <input type="text" name="username" id="username" placeholder="User Name">
+
+    <input type="email" name="email" id="email" placeholder="Email">
+
+    <input type="password" name="password" id="password" placeholder="Password">
+
+    <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm Password">
+
+    <input type="text" name="phone" id="phone" placeholder="Phone">
+
+    <button type="submit">Register</button>
+
+</form>
+
+{% endblock %}

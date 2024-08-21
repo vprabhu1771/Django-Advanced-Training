@@ -1,0 +1,88 @@
+from django.contrib.auth import authenticate, login, logout
+from django.http import HttpResponse
+from django.shortcuts import render, redirect
+from django.contrib.auth.models import User
+
+from home.models import Customer
+
+
+# Create your views here.
+def customer_login(request):
+    # return HttpResponse("Customer Login Works")
+
+    if (request.method == 'POST'):
+
+        username = request.POST.get('username')
+
+        password = request.POST.get('password')
+
+        user = authenticate(username=username, password=password)
+
+        if user is not None:
+            login(request, user)
+            return redirect('home')
+
+    return render(request, 'backend/login.html')
+
+
+def customer_registration(request):
+    # return HttpResponse("Customer Registration Works")
+
+    if (request.method == 'POST'):
+
+        username = request.POST.get('username')
+
+        email = request.POST.get('email')
+
+        password = request.POST.get('password')
+
+        confirm_password = request.POST.get('confirm_password')
+
+        phone = request.POST.get('phone')
+
+        # print("{} created successfully".format(username))
+
+        if password == confirm_password:
+            if User.objects.filter(username=username).exists():
+
+                print("username is Already Exists")
+
+                return redirect('customer_registration')
+            else:
+                if User.objects.filter(email=email).exists():
+
+                    print("email is Already Exists")
+
+                    return redirect('customer_registration')
+                else:
+                    user = User.objects.create_user(username=username, email=email, password=password)
+
+                    user.save()
+
+                    customer = Customer(user=user, phone=phone)
+
+                    customer.save()
+
+                    # after registration login automatically
+                    # code for login of user will come here
+                    our_customer = authenticate(username=username, password=password)
+
+                    if our_customer is not None:
+                        login(request, user)
+                        return redirect('home')
+        else:
+            print("Error here...")
+            return redirect('customer_registration')
+
+    return render(request, 'backend/register.html')
+
+
+def customer_logout(request):
+    # return HttpResponse("Customer Logout Works")
+    logout(request)
+    return redirect('home')
+
+
+def home(request):
+    # return HttpResponse("Home Page Works")
+    return render(request, 'backend/index.html')

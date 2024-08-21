@@ -1,0 +1,64 @@
+What are Class Based Views ? (CBV's)
+
+View - take in request, return response
+
+Class Based View - (implement view as Python Object)
+
+Don't replace Function Based Views
+
+Benefits:
+
+Promote Code Resue -> inheritance
+
+Mixins
+
+DRY - help reduce code duplication
+
+Code Structuring
+
+
+
+Django provides example views classes
+
+Built in / Pre-Written views - (Generic Views) Accessed via:
+
+from django.views.generic
+
+
+TemplateView()
+
+when you might use Template.View() ?
+
+Generic view to show static pages
+
+Pages that use GET requests
+
+
+Not generally used
+
+Show a form on a page Create / Update information
+
+
+
+Using directly within URL Configuration
+
+TemplateView()
+
+Pass changes to Class Based View as_view()
+
+Arguments passed to as_view() will override attributes set on the class.
+
+for eg:
+
+we set template_name on TemplateView
+
+
+
+
+Template Explain Diagram 1
+
+django.views.generic.base.TemplateResponse
+
+django.views.generic.base.ContextMixin
+
+django.views.generic.base.View

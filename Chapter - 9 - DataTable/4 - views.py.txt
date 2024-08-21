@@ -1,0 +1,9 @@
+from django.shortcuts import render
+from django.views.generic import ListView
+
+from backend.models import Country
+
+class CountryList(ListView):
+    model = Country
+
+    template_name = 'backend/index.html'

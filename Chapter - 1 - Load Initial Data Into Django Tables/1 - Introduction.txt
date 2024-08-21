@@ -1,0 +1,39 @@
+Fixture is a collection of data to insert data into django models
+
+
+
+Fixtures can be written in JSON, XML, YAML format
+
+under your_app -> fixtures
+
+country.json
+
+
+Run Initial Data into Django tables (Models)
+
+python manage.py loaddata country.json
+
+
+
+Backup
+
+python manage.py dumpdata backend.Country > country.json
+
+
+Json Formatter -> Jiaxing Zhang
+
+https://plugins.jetbrains.com/plugin/13931-json-formatter
+
+
+Format JSON, Minify JSON, Verify JSON as if you editing a file with .json suffix.
+
+Usage: Paste JSON string into editor, and press Reformat Code (Ctrl + Alt + L in windows) 
+
+to format code as if you editing a file with .json suffix.
+
+
+The plugin panel will appear on the right side of the window after installed, 
+
+and you don't have to restart the IDE. make sure that you have enabled the 
+
+"Tool Window Bars" in Edit -> Appearance -> Tool Window Bars. 

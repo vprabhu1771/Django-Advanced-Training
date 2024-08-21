@@ -1,0 +1,1 @@
+https://kognitribe-2021.medium.com/how-to-deploy-django-app-on-cpanel-shared-hosting-b551ec2e0cb7

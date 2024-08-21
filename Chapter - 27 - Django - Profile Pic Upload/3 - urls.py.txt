@@ -1,0 +1,8 @@
+from django.urls import path
+from .views import ProfilePicUpload
+
+urlpatterns = [
+
+    path('profile/picture/', ProfilePicUpload.as_view())
+
+]

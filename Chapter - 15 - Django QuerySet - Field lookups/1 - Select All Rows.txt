@@ -1,0 +1,20 @@
+QuerySet
+
+Category.objects.all()
+
+SQL
+
+SELECT * FROM `category`;
+
+OUTPUT
+
++----+-------------+----------+
+| id | name        | status   |
++----+-------------+----------+
+|  1 | Technology  | Active   |
+|  2 | Science     | Active   |
+|  3 | Management  | Active   |
+|  4 | General     | Inactive |
+|  5 | Programming | Active   |
++----+-------------+----------+
+5 rows in set (0.000 sec)

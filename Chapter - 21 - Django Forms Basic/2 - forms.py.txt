@@ -1,0 +1,21 @@
+from django import forms
+from django.core.exceptions import ValidationError
+
+from .models import Task
+
+class TaskForm(forms.ModelForm):
+    class Meta:
+        model = Task
+        fields = '__all__'
+        widgets = {
+            'name': forms.Textarea(attrs={'class': 'form-control my-5'})
+        }
+        labels = {
+            'name': 'Add Some Shopping Task'
+        }
+
+    def clean_name(self):
+        name = self.cleaned_data['name']
+        if 'Buy' not in name:
+            raise ValidationError('We only accept Buying Task only')
+        return name

@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+
+<a href="{% url 'pdf_view' %}" target="_blank">View Invoice</a>
+
+<br>
+
+<a href="{% url 'pdf_download' %}">Download Invoice</a>
+
+</body>
+</html>

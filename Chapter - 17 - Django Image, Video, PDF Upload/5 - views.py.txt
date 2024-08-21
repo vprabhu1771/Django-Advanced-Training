@@ -1,0 +1,51 @@
+from rest_framework.response import Response
+from rest_framework.generics import ListAPIView
+from .serializers import GallerySerializer, VideoSerializer, PDFSerializer
+from backend.models import Gallery, Video, PDF
+import json
+from django.http import HttpResponse
+
+
+class GalleryViewSet(ListAPIView):
+    queryset = Gallery.objects.all()
+    serializer_class = GallerySerializer
+
+    def list(self, request, *args, **kwargs):
+        gallery_images = Gallery.objects.all()
+        serializer = GallerySerializer(gallery_images, many=True)
+        return Response(serializer.data)
+
+    def post(self, request, *args, **kwargs):
+        file = request.data['file']
+        image = Gallery.objects.create(image=file)
+        return HttpResponse(json.dumps({'message': "Uploaded"}), status=200)
+
+
+class VideoViewSet(ListAPIView):
+    queryset = Video.objects.all()
+    serializer_class = VideoSerializer
+
+    def list(self, request, *args, **kwargs):
+        video_file = Video.objects.all()
+        serializer = VideoSerializer(video_file, many=True)
+        return Response(serializer.data)
+
+    def post(self, request, *args, **kwargs):
+        file = request.data['file']
+        video_file = Video.objects.create(video=file)
+        return HttpResponse(json.dumps({'message': "Uploaded"}), status=200)
+
+
+class PDFViewSet(ListAPIView):
+    queryset = PDF.objects.all()
+    serializer_class = PDFSerializer
+
+    def list(self, request, *args, **kwargs):
+        pdf_document = PDF.objects.all()
+        serializer = PDFSerializer(pdf_document, many=True)
+        return Response(serializer.data)
+
+    def post(self, request, *args, **kwargs):
+        file = request.data['file']
+        pdf_document = PDF.objects.create(video=file)
+        return HttpResponse(json.dumps({'message': "Uploaded"}), status=200)
