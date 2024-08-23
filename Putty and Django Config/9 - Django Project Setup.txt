@@ -1,0 +1,29 @@
+5) Go Python App Folder
+
+cd bank_ifsc_code_finder/
+
+
+6) Install Django
+
+pip install django
+
+
+
+
+
+7) Create Django Config Folder
+
+django-admin startproject config .
+
+
+8) Migration Commands
+
+python manage.py makemigrations
+
+python manage.py migrate
+
+
+9) Set up the superuser account
+
+python manage.py createsuperuser
+

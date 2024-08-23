@@ -1,0 +1,32 @@
+1) Open Putty Application
+
+Start -> Putty
+
+
+2) Putty Configuration
+
+Host Name or IP Address
+bughunt.in
+
+Port
+22
+
+Connection Type
+SSH
+
+Close Window on exit
+Only on clean exit
+
+Click Open
+
+
+3) Putty Security Alert
+
+Click Accept
+
+
+4) Login to Your Account usign SSH
+
+username
+
+password

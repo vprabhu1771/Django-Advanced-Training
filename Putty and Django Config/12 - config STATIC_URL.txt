@@ -1,0 +1,12 @@
+Locate the STATIC_URL line, and then add the following lines beneath it:
+
+from pathlib import Path
+import os
+
+# add below these line on end of document
+
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_files')
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, "static_media")

@@ -1,0 +1,19 @@
+Use a text editor to open the ~/bank_ifsc_code_finder/config/settings.py file, 
+
+and then make the following changes:
+
+Locate the ALLOWED_HOSTS line, and then modify it as follows. 
+
+
+ALLOWED_HOSTS = []
+
+
+Replace example.com with your own domain name: 
+
+ALLOWED_HOSTS = ['example.com']
+
+or
+
+ALLOWED_HOSTS = [
+    'bughunt.in'
+]

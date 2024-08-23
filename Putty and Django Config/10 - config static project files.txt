@@ -1,0 +1,5 @@
+mkdir -p templates/static_pages
+
+mkdir static_files
+
+mkdir static_media

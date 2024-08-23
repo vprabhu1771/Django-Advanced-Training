@@ -1,0 +1,3 @@
+ python manage.py collectstatic
+
+125 static files copied to '/home/rp3unwwam3jm/bank_ifsc_code_finder/static_files'.
