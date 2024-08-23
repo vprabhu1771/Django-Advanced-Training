@@ -1,0 +1,30 @@
+from django.shortcuts import render
+# Create your views here.
+def index(request):
+
+    print(request.method)
+
+    if request.method == "POST":
+        string1 = request.POST['string1']
+        string2 = request.POST['string2']
+        result = []
+
+        # Ensure both strings are of the same length
+        if len(string1) != len(string2):
+            print("Both strings must have the same length.")
+            context = {
+                'error': "Both strings must have the same length."
+            }
+            return render(request, "backend/index.html", context)
+        else:
+            for char1, char2 in zip(string1, string2):
+                print(char1 + char2)
+
+                result.append(char1+char2)
+
+            context = {
+                "result": result
+            }
+        return render(request, "backend/index.html", context)
+
+    return render(request, "backend/index.html")

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form method="POST">
+    {% csrf_token %}
+
+    <label>Enter String 1</label>
+
+    <input type="text" placeholder="eg: john" name="string1">
+
+    <label>Enter String 2</label>
+
+    <input type="text" placeholder="eg: wick" name="string2">
+
+    <input type="submit" value="cal">
+
+</form>
+
+{% if error %}
+
+{{ error }}
+
+{% endif %}
+
+{% if result %}
+
+<h1>{{ result }}</h1>
+
+{% for element in result %}
+
+{{ element }} <br>
+
+{% endfor %}
+
+{% endif %}
+
+</body>
+</html>
