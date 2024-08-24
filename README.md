@@ -60,3 +60,7 @@
 29. [Django - Education App](https://github.com/vprabhu1771/Django-Advanced-Training/tree/main/29%20-%20Django%20-%20Education%20App)
 
 30. [Django Chart Js Basic](https://github.com/vprabhu1771/Django-Advanced-Training/tree/main/30%20-%20Django%20Chart%20Js%20Basic)
+
+31. [Django Partial Setup](https://github.com/vprabhu1771/Django-Advanced-Training/tree/main/31%20-%20Django%20Partial%20Setup)
+
+32. [Django String Concatnation](https://github.com/vprabhu1771/Django-Advanced-Training/tree/main/32%20-%20Django%20String%20Concatnation)
