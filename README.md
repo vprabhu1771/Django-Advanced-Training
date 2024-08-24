@@ -41,22 +41,22 @@
 
 20. [Django Gender Based Profile Pic - 2](https://github.com/vprabhu1771/Django-Advanced-Training/tree/main/20%20-%20Django%20Gender%20Based%20Profile%20Pic%20-%202)
 
-21. []()
+21. [Django Forms Basic](https://github.com/vprabhu1771/Django-Advanced-Training/tree/main/21%20-%20Django%20Forms%20Basic)
 
-22. []()
+22. [Django Formsets Using Form Class Basic](https://github.com/vprabhu1771/Django-Advanced-Training/tree/main/22%20-%20Django%20Formsets%20Using%20Form%20Class%20Basic)
 
-23. []()
+23. [Django Login and Registraion Basic](https://github.com/vprabhu1771/Django-Advanced-Training/tree/main/23%20-%20Django%20Login%20and%20Registraion%20Basic)
 
-24. []()
+24. [Django Class-Based Views - Using TemplateView](https://github.com/vprabhu1771/Django-Advanced-Training/tree/main/24%20-%20Django%20Class-Based%20Views%20-%20Using%20TemplateView)
 
-25. []()
+25. [Djagno Search View - using TemplateView](https://github.com/vprabhu1771/Django-Advanced-Training/tree/main/25%20-%20Djagno%20Search%20View%20-%20using%20TemplateView)
 
-26. []()
+26. [Django Dependent Drop Down List With JQuery HTMX](https://github.com/vprabhu1771/Django-Advanced-Training/tree/main/26%20-%20Django%20Dependent%20Drop%20Down%20List%20With%20JQuery%20HTMX)
 
-27. []()
+27. [Django - Profile Pic Upload](https://github.com/vprabhu1771/Django-Advanced-Training/tree/main/27%20-%20Django%20-%20Profile%20Pic%20Upload)
 
-28. []()
+28. [Django Email Password API Login](https://github.com/vprabhu1771/Django-Advanced-Training/tree/main/28%20-%20Django%20Email%20Password%20API%20Login)
 
-29. []()
+29. [Django - Education App](https://github.com/vprabhu1771/Django-Advanced-Training/tree/main/29%20-%20Django%20-%20Education%20App)
 
-30. []()
+30. [Django Chart Js Basic](https://github.com/vprabhu1771/Django-Advanced-Training/tree/main/30%20-%20Django%20Chart%20Js%20Basic)
