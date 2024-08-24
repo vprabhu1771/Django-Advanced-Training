@@ -21,25 +21,25 @@
 
 10. [How to Link JsGrid](https://github.com/vprabhu1771/Django-Advanced-Training/tree/main/10%20-%20How%20to%20Link%20JsGrid)
 
-11. []()
+11. [JsGrid](https://github.com/vprabhu1771/Django-Advanced-Training/tree/main/11%20-%20%20JsGrid)
 
-12. []()
+12. [Ajax Live Data Search Using JQuery](https://github.com/vprabhu1771/Django-Advanced-Training/tree/main/12%20-%20Ajax%20Live%20Data%20Search%20Using%20JQuery)
 
-13. []()
+13. [Check Name Availability using Django AJAX](https://github.com/vprabhu1771/Django-Advanced-Training/tree/main/13%20-%20Check%20Name%20Availability%20using%20Django%20AJAX)
 
-14. []()
+14. [Django Render HTML to PDF](https://github.com/vprabhu1771/Django-Advanced-Training/tree/main/14%20-%20Django%20Render%20HTML%20to%20PDF)
 
-15. []()
+15. [Django QuerySet - Field lookups](https://github.com/vprabhu1771/Django-Advanced-Training/tree/main/15%20-%20Django%20QuerySet%20-%20Field%20lookups)
 
-16. []()
+16. [Django QuerySet - Aggregation](https://github.com/vprabhu1771/Django-Advanced-Training/tree/main/16%20-%20Django%20QuerySet%20-%20Aggregation)
 
-17. []()
+17. [Django Image, Video, PDF Upload](https://github.com/vprabhu1771/Django-Advanced-Training/tree/main/17%20-%20Django%20Image%2C%20Video%2C%20PDF%20Upload)
 
-18. []()
+18. [Django No Image Available](https://github.com/vprabhu1771/Django-Advanced-Training/tree/main/18%20-%20Django%20No%20Image%20Available)
 
-19. []()
+19. [Django Gender Based Profile Pic - 1](https://github.com/vprabhu1771/Django-Advanced-Training/tree/main/19%20-%20Django%20Gender%20Based%20Profile%20Pic%20-%201)
 
-20. []()
+20. [Django Gender Based Profile Pic - 2](https://github.com/vprabhu1771/Django-Advanced-Training/tree/main/20%20-%20Django%20Gender%20Based%20Profile%20Pic%20-%202)
 
 21. []()
 
