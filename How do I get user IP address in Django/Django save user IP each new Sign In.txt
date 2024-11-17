@@ -1,0 +1,1 @@
+https://stackoverflow.com/questions/70972861/django-save-user-ip-each-new-sign-in

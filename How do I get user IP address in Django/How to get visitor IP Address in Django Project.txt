@@ -1,0 +1,1 @@
+https://medium.com/@arrosid/how-to-get-visitor-ip-address-in-django-project-793d383969ae

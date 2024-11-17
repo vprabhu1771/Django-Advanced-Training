@@ -1,0 +1,23 @@
+https://stackoverflow.com/questions/4581789/how-do-i-get-user-ip-address-in-django
+
+Get the ip address with this function:
+
+def get_ip_address(request):
+    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+    if x_forwarded_for:
+        ip = x_forwarded_for.split(',')[0]
+    else:
+        ip = request.META.get('REMOTE_ADDR')
+    return ip
+
+
+after that you can get the user location data and other info from that web app http://www.iplocinfo.com/:
+
+
+import requests
+def get_ip_data(request):
+    ip_address = get_ip_address(request)
+    api_key = "your api key"
+    endPoint = f'https://www.iplocinfo.com/api/v1/{ip_address}?apiKey={api_key}'
+    data = requests.get(endPoint)
+    return data.json()

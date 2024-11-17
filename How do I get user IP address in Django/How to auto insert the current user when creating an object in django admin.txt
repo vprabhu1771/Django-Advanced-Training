@@ -1,0 +1,1 @@
+https://stackoverflow.com/questions/2991365/how-to-auto-insert-the-current-user-when-creating-an-object-in-django-admin
