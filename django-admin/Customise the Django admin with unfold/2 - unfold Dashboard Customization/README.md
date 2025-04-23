@@ -48,6 +48,15 @@ def dashboard_callback(request, context):
 Make sure you point to this callback function:
 
 ```python
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [BASE_DIR / "templates"],  # Ensure this line is added
+        #....
+    }
+]
+
 UNFOLD = {
     "SITE_TITLE": "My Admin",
     "SITE_HEADER": "Dashboard",
