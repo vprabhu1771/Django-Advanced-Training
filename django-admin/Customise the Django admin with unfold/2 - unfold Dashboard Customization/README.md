@@ -74,7 +74,7 @@ Create the file `templates/admin/index.html` to customize Unfold’s dashboard t
 Here’s an example that uses Tailwind (Unfold uses it) to show your product count:
 
 ```html
-{% extends "unfold/layout/base.html" %}
+{% extends "unfold/layouts/base.html" %}
 
 {% block content %}
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
