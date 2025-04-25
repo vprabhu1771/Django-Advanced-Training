@@ -47,8 +47,8 @@ def list_fruits(request):
 **list_fruits.html**
 ```html
 <ul>
-  {% for fruit in fruits %}
-    <li>{{ fruit }}</li>
+  {% for row in fruits %}
+    <li>{{ row }}</li>
   {% endfor %}
 </ul>
 ```
