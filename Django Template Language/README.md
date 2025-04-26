@@ -2,22 +2,6 @@ Here’s a list of **Django Template Language (DTL)** topics with examples, incl
 
 ---
 
-### 1. **Variable Rendering**
-**views.py**
-```python
-from django.shortcuts import render
-
-def show_name(request):
-    return render(request, 'show_name.html', {'name': 'John'})
-```
-
-**show_name.html**
-```html
-<p>Hello, {{ name }}</p>
-```
-
----
-
 ### 2. **If Condition**
 **views.py**
 ```python
