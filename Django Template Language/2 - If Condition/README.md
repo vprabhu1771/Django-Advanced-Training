@@ -32,4 +32,14 @@ urlpatterns = [
 ```
 
 ![Image](1.PNG)
+
+# 1 - `views.py`
+
+```python
+from django.shortcuts import render
+
+def check_user(request):
+    return render(request, 'frontend/check_user.html', {'is_logged_in': False})
+```
+
 ![Image](2.PNG)
