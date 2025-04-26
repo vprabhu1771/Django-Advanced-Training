@@ -1,23 +1,7 @@
 Here’s a list of **Django Template Language (DTL)** topics with examples, including corresponding `views.py` and `template.html` code:
 
 
-### 5. **Includes**
-**views.py**
-```python
-def homepage(request):
-    return render(request, 'home.html')
-```
 
-**home.html**
-```html
-<h1>Welcome</h1>
-{% include 'footer.html' %}
-```
-
-**footer.html**
-```html
-<p>Copyright © 2025</p>
-```
 
 ---
 
