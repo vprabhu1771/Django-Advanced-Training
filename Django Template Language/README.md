@@ -1,20 +1,5 @@
 Here’s a list of **Django Template Language (DTL)** topics with examples, including corresponding `views.py` and `template.html` code:
 
----
-
-### 4. **Filters**
-**views.py**
-```python
-def show_user(request):
-    return render(request, 'show_user.html', {'username': 'john doe'})
-```
-
-**show_user.html**
-```html
-<p>{{ username|title }}</p>  <!-- Output: John Doe -->
-```
-
----
 
 ### 5. **Includes**
 **views.py**
@@ -68,17 +53,7 @@ def page_view(request):
 
 ---
 
-### 7. **Static Files**
-**settings.py**
-```python
-STATIC_URL = '/static/'
-```
 
-**In template:**
-```html
-{% load static %}
-<img src="{% static 'images/logo.png' %}" alt="Logo">
-```
 
 ---
 
