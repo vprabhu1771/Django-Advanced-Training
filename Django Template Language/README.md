@@ -5,38 +5,6 @@ Here’s a list of **Django Template Language (DTL)** topics with examples, incl
 
 ---
 
-### 6. **Template Inheritance**
-**base.html**
-```html
-<html>
-  <body>
-    <header>{% block header %}{% endblock %}</header>
-    <main>{% block content %}{% endblock %}</main>
-  </body>
-</html>
-```
-
-**child.html**
-```html
-{% extends 'base.html' %}
-
-{% block header %}
-<h1>This is Header</h1>
-{% endblock %}
-
-{% block content %}
-<p>This is the main content.</p>
-{% endblock %}
-```
-
-**views.py**
-```python
-def page_view(request):
-    return render(request, 'child.html')
-```
-
----
-
 
 ---
 

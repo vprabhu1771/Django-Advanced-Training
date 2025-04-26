@@ -3,6 +3,7 @@
 # 1 - `views.py`
 ```python
 from django.shortcuts import render
+
 def about(request):
     return render(request, 'about.html')
 ```
@@ -10,10 +11,10 @@ def about(request):
 # 2 - `urls.py`
 ```python
 from django.urls import path
-from . import views
+from frontend.views import about
 
 urlpatterns = [
-    path('about/', views.about, name='about'),
+    path('about/', about, name='about'),
 ]
 ```
 

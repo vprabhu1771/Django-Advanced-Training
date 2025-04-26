@@ -1,0 +1,20 @@
+Folder Setup
+
+project_folder - frontend -> templates
+
+project_folder - frontend -> templates -> frontend
+
+project_folder - frontend -> templates -> frontend -> layout
+
+File Setup
+
+project_folder - frontend -> templates -> frontend -> layout
+
+app.html
+topbar.html
+header.html
+footer.html
+
+project_folder - frontend -> templates -> frontend
+
+home.html
