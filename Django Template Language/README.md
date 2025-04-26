@@ -1,24 +1,6 @@
 Here’s a list of **Django Template Language (DTL)** topics with examples, including corresponding `views.py` and `template.html` code:
 
 ---
-### 3. **For Loop**
-**views.py**
-```python
-def list_fruits(request):
-    fruits = ['Apple', 'Banana', 'Cherry']
-    return render(request, 'list_fruits.html', {'fruits': fruits})
-```
-
-**list_fruits.html**
-```html
-<ul>
-  {% for row in fruits %}
-    <li>{{ row }}</li>
-  {% endfor %}
-</ul>
-```
-
----
 
 ### 4. **Filters**
 **views.py**
