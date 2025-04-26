@@ -1,25 +1,6 @@
 Here’s a list of **Django Template Language (DTL)** topics with examples, including corresponding `views.py` and `template.html` code:
 
 ---
-
-### 2. **If Condition**
-**views.py**
-```python
-def check_user(request):
-    return render(request, 'check_user.html', {'is_logged_in': True})
-```
-
-**check_user.html**
-```html
-{% if is_logged_in %}
-    <p>Welcome back!</p>
-{% else %}
-    <p>Please login.</p>
-{% endif %}
-```
-
----
-
 ### 3. **For Loop**
 **views.py**
 ```python
