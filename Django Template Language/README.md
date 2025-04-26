@@ -38,31 +38,6 @@ def page_view(request):
 ---
 
 
-
----
-
-### 8. **URL Tag**
-**urls.py**
-```python
-from django.urls import path
-from . import views
-
-urlpatterns = [
-    path('about/', views.about, name='about'),
-]
-```
-
-**views.py**
-```python
-def about(request):
-    return render(request, 'about.html')
-```
-
-**In another template**
-```html
-<a href="{% url 'about' %}">About Us</a>
-```
-
 ---
 
 Would you like me to provide more advanced examples like custom filters, tags, or context processors too?
