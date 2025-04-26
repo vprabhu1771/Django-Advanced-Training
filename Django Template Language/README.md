@@ -7,30 +7,6 @@ Would you like me to provide more advanced examples like custom filters, tags, o
 Great! Let’s continue with **more advanced Django Template Language (DTL)** topics with examples and `views.py`:
 
 
-### 15. **Default and Default_if_none Filters**
-**views.py**
-```python
-def profile(request):
-    return render(request, 'profile.html', {'bio': None})
-```
-
-**profile.html**
-```html
-<p>{{ bio|default:"No bio available" }}</p>
-<p>{{ bio|default_if_none:"No bio available" }}</p>
-```
-
----
-
-### 16. **Verbatim Tag (show code as-is)**
-```html
-{% verbatim %}
-    {{ this will not be rendered }}
-{% endverbatim %}
-```
-
----
-
 ### 17. **Length and Length_is Filters**
 **views.py**
 ```python
